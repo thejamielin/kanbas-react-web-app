@@ -1,3 +1,7 @@
+:root {
+  --card-width: 290px;
+}
+
 body {
   margin: 0;
   padding: 0;
