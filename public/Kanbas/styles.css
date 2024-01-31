@@ -1,5 +1,7 @@
 :root {
   --card-width: 290px;
+  --dull-red: #ba3635;
+  --neu-red: #d4192d;
 }
 
 body {
