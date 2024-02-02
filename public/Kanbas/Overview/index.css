@@ -1,0 +1,32 @@
+a {
+  color: var(--dull-red);
+}
+
+a:link {
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+.wd-overview-all-parts {
+  padding: 24px;
+}
+
+.button-gray {
+  --bs-btn-bg: var(--module-gray);
+  --bs-btn-color: var(--wd-text-gray);
+}
+
+h3 {
+  color: var(--wd-text-gray);
+}
