@@ -1,20 +1,20 @@
-a {
+.wd-overview-all-parts a {
   color: var(--dull-red);
 }
 
-a:link {
+.wd-overview-all-parts a:link {
   text-decoration: underline;
 }
 
-a:hover {
+.wd-overview-all-parts a:hover {
   text-decoration: none;
 }
 
-a:active {
+.wd-overview-all-parts a:active {
   text-decoration: none;
 }
 
-a:visited {
+.wd-overview-all-parts a:visited {
   text-decoration: none;
 }
 
