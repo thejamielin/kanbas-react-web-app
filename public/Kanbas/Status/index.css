@@ -1,0 +1,32 @@
+.wd-status-all-parts a {
+  color: var(--dull-red);
+}
+
+.wd-status-all-parts a:link {
+  text-decoration: underline;
+}
+
+.wd-status-all-parts a:hover {
+  text-decoration: none;
+}
+
+.wd-status-all-parts a:active {
+  text-decoration: none;
+}
+
+.wd-status-all-parts a:visited {
+  text-decoration: none;
+}
+
+.wd-status-all-parts {
+  padding: 24px;
+}
+
+.button-gray {
+  --bs-btn-bg: var(--module-gray);
+  --bs-btn-color: var(--wd-text-gray);
+}
+
+h3 {
+  color: var(--wd-text-gray);
+}
