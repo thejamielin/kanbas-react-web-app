@@ -1,14 +1,14 @@
 <html>
   <head>
+    <link rel="stylesheet" href="/libs/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="/Kanbas/styles.css" />
     <link rel="stylesheet" href="/Kanbas/Navigation/index.css" />
     <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="/Kanbas/Courses/Navigation/index.css" />
   </head>
   <body>
-    <table>
-      <tr>
-        <td valign="top">
+      <div class="d-flex" style="height: 100%">
+        <div>
           <ul class="wd-kanbas-navigation">
             <li>
               <a href="http://northeastern.edu" style="font-size: xx-large; color: var(--neu-red)">N</a>
@@ -47,8 +47,8 @@
               <a href="#"><i class="fa fa-question-circle"></i><br />Help</a>
             </li>
           </ul>
-        </td>
-        <td valign="top">
+        </div>
+        <div>
           <ul class="wd-navigation">
             <li>
               <a href="/Kanbas/Courses/Home/screen.html">Home</a>
@@ -79,8 +79,8 @@
             <li><a href="#">Syllabus</a></li>
             <li><a href="#">Settings</a></li>
           </ul>
-        </td>
-        <td>
+        </div>
+        <div>
           <select id="select-gradebook">
               <option value="GRADEBOOK">Gradebook</option>
               <option value="OTHER">Other</option>
@@ -186,8 +186,7 @@
                   </tr>
               </tbody>
             </table>
-        </td>
-      </tr>
-    </table>
+          </div>
+      </div>
   </body>
 </html>
