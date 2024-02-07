@@ -1,0 +1,59 @@
+@media (max-width: 768px) {
+  .wd-display-md-show {
+    display: block !important;
+  }
+}
+
+.wd-mobile-nav {
+  background-color: black;
+  color: white;
+  align-items: center;
+}
+
+.wd-mobile-nav-title {
+  padding: 15.6px;
+}
+
+.wd-mobile-nav button {
+  color: inherit;
+  background-color: inherit;
+  border: none;
+}
+
+.wd-mobile-course-nav {
+  list-style: none;
+  margin-bottom: 50px;
+  box-shadow: 0px 10px 10px 2px var(--wd-border-gray);
+  color: var(--dull-red);
+  padding: 0px;
+}
+
+.wd-mobile-kanbas-nav-header {
+  align-items: center;
+  margin-bottom: 36px;
+}
+
+.wd-mobile-kanbas-nav {
+  position: fixed;
+  padding: 24px 36px 24px 24px;
+  width: 100%;
+  background-color: white;
+}
+
+.wd-mobile-kanbas-nav ul {
+  list-style: none;
+  color: var(--dull-red);
+  height: 100%;
+  padding: 0px;
+  margin-bottom: 6px;
+  margin-left: 25px;
+}
+
+.wd-mobile-kanbas-nav li {
+  font-size: 20px;
+}
+
+.wd-mobile-kanbas-nav button {
+  border: none;
+  background-color: inherit;
+}
