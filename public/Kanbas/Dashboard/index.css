@@ -1,0 +1,26 @@
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--dull-red);
+}
+
+.wd-title {
+  color: var(--wd-title-gray);
+  font-weight: bold;
+}
+
+.wd-subtitle {
+  color: var(--wd-text-gray);
+}
+
+a > i {
+  margin-top: 9px;
+  color: var(--wd-text-gray);
+}
+
+a > i:hover {
+  color: var(--neu-red);
+}
