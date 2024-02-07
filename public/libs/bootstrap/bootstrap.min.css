@@ -4319,6 +4319,9 @@ fieldset:disabled .btn {
 .card-title {
   margin-bottom: var(--bs-card-title-spacer-y);
   color: var(--bs-card-title-color);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .card-subtitle {
   margin-top: calc(-0.5 * var(--bs-card-title-spacer-y));
