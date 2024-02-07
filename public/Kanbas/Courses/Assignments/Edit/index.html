@@ -1,0 +1,78 @@
+<html>
+  <select id="select-speed-grader">
+    <option value="SPEED-GRADER">Speed Grader</option>
+    <option value="OTHER">Other</option>
+  </select>
+  <hr />
+  <form id="assignment-fields">
+    <label for="assignment-field-name"><h2>Assignment Name</h2></label>
+    <input id="assignment-field-name" type="text" title="Assignment Name field" value="A1 - ENV + HTML"></input>
+    <br />
+    <br />
+    <textarea id="assignment-field-description" cols="30" rows="10">This is the assignment description.</textarea>
+    <br />
+    <br />
+    <label>Points <br />
+        <input type="number" id="assignment-field-points" value="100"></label>
+    <br />
+    <br />
+    <label>Assignment Group 
+        <br/>
+        <select id="select-assignment-group">
+            <option value="ASSIGNMENTS">ASSIGNMENTS</option>
+            <option value="OTHER">Other</option>
+        </select>
+    </label>
+    <br />
+    <br />
+    <label>Display Grade as<br />
+        <select id="select-grade-units">
+            <option value="PERCENTAGE">Percentage</option>
+            <option value="POINTS">Points</option>
+        </select>
+    </label>
+    <br />
+    <br />
+    <label>Submission Type<br />
+        <select id="select-submission-type">
+            <option value="ONLINE">Online</option>
+            <option value="IN-PERSON">In person</option>
+        </select>
+    </label>
+    <br />
+    <br />
+    <label>Online Entry Options</label>
+    <br />
+    <input type="checkbox" value="TEXT-ENTRY" name="check-entry" id="checkbox-text-entry">Text Entry</input>
+    <br />
+    <input type="checkbox" value="WEBSITE-URL" name="check-entry" id="checkbox-website-url">Website URL</input>
+    <br />
+    <input type="checkbox" value="MEDIA-RECORDINGS" name="check-entry" id="checkbox-media-recordings">Media Recordings</input>
+    <br />
+    <input type="checkbox" value="TEXT-STUDENT-ANNOTATION" name="check-entry" id="checkbox-student-annotation">Student Annotation</input>
+    <br />
+    <input type="checkbox" value="TEXT-FILE-UPLOADS" name="check-entry" id="checkbox-file-uploads">File Uploads</input>
+    <br />
+    <br />
+    <label>Assign to <br/>
+        <input id="assignment-field-assigned-to" type="text" title="Assign to field" value="Everyone"></input>
+    <br />
+    <br />
+    <label>Due <br />
+    <input type="date" id="assignment-field-due-date" value="2021-01-01"></label>
+    <br />
+    <br />
+    <label>Available From <br />
+        <input type="date" id="assignment-field-available-from" value="2021-01-01"></label>
+    </label>
+    <br />
+    <br />
+    <label>Until <br />
+        <input type="date" id="assignment-field-until" value="2021-01-01"></label>
+    </label>
+    <br />
+    <br />
+    <a href="../screen.html"><button type="button">Save</button></a>
+    <a href="../screen.html"><button type="button">Cancel</button></a>
+</form>
+</html>
