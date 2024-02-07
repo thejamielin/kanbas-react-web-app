@@ -1,14 +1,14 @@
 <html>
   <head>
+    <link rel="stylesheet" href="/libs/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="/Kanbas/styles.css" />
     <link rel="stylesheet" href="/Kanbas/Navigation/index.css" />
     <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="/Kanbas/Courses/Navigation/index.css" />
   </head>
-  <body></body>
-  <table>
-    <tr>
-      <td valign="top">
+  <body>
+    <div class="d-flex">
+      <div>
         <ul class="wd-kanbas-navigation">
           <li>
             <a href="http://northeastern.edu" style="font-size: xx-large; color: var(--neu-red)">N</a>
@@ -47,8 +47,8 @@
             <a href="#"><i class="fa fa-question-circle"></i><br />Help</a>
           </li>
         </ul>
-      </td>
-      <td valign="top">
+      </div>
+      <div>
         <ul class="wd-navigation">
           <li>
             <a href="/Kanbas/Courses/Home/screen.html">Home</a>
@@ -79,8 +79,8 @@
           <li><a href="#">Syllabus</a></li>
           <li><a href="#">Settings</a></li>
         </ul>
-      </td>
-      <td>
+      </div>
+      <div>
         <select id="select-speed-grader">
             <option value="SPEED-GRADER">Speed Grader</option>
             <option value="OTHER">Other</option>
@@ -88,6 +88,7 @@
           <hr />
           <form id="assignment-fields">
             <label for="assignment-field-name"><h2>Assignment Name</h2></label>
+            <br />
             <input id="assignment-field-name" type="text" title="Assignment Name field" value="A1 - ENV + HTML"></input>
             <br />
             <br />
@@ -157,7 +158,7 @@
             <a href="../screen.html"><button type="button">Save</button></a>
             <a href="../screen.html"><button type="button">Cancel</button></a>
         </form>
-      </td>
-    </tr>
-  </table>
+      </div>
+    </div>
+</body>
 </html>
