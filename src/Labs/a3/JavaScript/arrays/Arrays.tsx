@@ -1,4 +1,4 @@
-function WorkingWithArrays() {
+function Arrays() {
   console.log("WorkingWithArrays");
   var functionScoped = 2;
   let blockScoped = 5;
@@ -25,4 +25,4 @@ function WorkingWithArrays() {
     </>
   );
 }
-export default WorkingWithArrays;
+export default Arrays;

@@ -4,7 +4,7 @@ import BooleanVariables from "./variables/BooleanVariables";
 import IfElse from "./conditionals/IfElse";
 import TernaryOperator from "./conditionals/TernaryOperator";
 import WorkingWithFunctions from "./WorkingWithFunctions";
-import WorkingWithArrays from "./arrays/WorkingWithArrays";
+import WorkingWithArrays from "./WorkingWithArrays";
 
 function JavaScript() {
   console.log("Hello World!");
