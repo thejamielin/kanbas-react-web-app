@@ -26,3 +26,7 @@
 .fs-2 {
   color: var(--neu-red);
 }
+
+div#account .fs-2 {
+  color: white;
+}
