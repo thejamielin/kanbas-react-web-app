@@ -1,0 +1,58 @@
+[
+  {
+    "_id": "JL01",
+    "name": "EECE2322 30297 Fun Digital Design/Comp Org SEC 01 Spring 2024 [BOS-1-TR]",
+    "number": "EECE2322",
+    "startDate": "2024-01-08",
+    "endDate": "2024-04-26",
+    "image": "eece2322.jpg"
+  },
+  {
+    "_id": "JL02",
+    "name": "EECE2323 37681 Lab for EECE 2322 SEC 07 Spring 2024 [BOS-1-TR]",
+    "number": "EECE2323",
+    "startDate": "2024-01-08",
+    "endDate": "2024-04-26",
+    "image": "eecelab.jpg"
+  },
+  {
+    "_id": "JL03",
+    "name": "Khoury Student Services",
+    "number": "CCIS01",
+    "startDate": "2024-01-08",
+    "endDate": "2024-04-26",
+    "image": "northeastern.jpg"
+  },
+  {
+    "_id": "JL04",
+    "name": "Khoury TA Orientation",
+    "number": "TA01",
+    "startDate": "2024-01-08",
+    "endDate": "2024-04-26",
+    "image": "khoury.jpg"
+  },
+  {
+    "_id": "JL05",
+    "name": "CS4550 39591 Web Development",
+    "number": "CS4550",
+    "startDate": "2024-01-08",
+    "endDate": "2024-04-26",
+    "image": "webdev.jpg"
+  },
+  {
+    "_id": "JL06",
+    "name": "MUSI2232 33056 Music Recording 1 SEC 02 Spring 2024 [BOS-1-TR]",
+    "number": "CCIS01",
+    "startDate": "2024-01-08",
+    "endDate": "2024-04-26",
+    "image": "recording.jpg"
+  },
+  {
+    "_id": "JL07",
+    "name": "CS1234 React JS",
+    "number": "CS1234",
+    "startDate": "2024-01-08",
+    "endDate": "2024-04-26",
+    "image": "reactjs.jpg"
+  }
+]
