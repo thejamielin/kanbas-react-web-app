@@ -1,0 +1,14 @@
+.wd-course-top {
+  margin: 0px 24px;
+  border-bottom: 1px solid var(--wd-border-gray);
+}
+
+.wd-course-header {
+  color: var(--dull-red);
+  font-size: 18px;
+}
+
+.wd-course-mini-bar {
+  padding: 1px;
+  margin-right: 12px;
+}
