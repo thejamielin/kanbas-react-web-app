@@ -4,6 +4,7 @@ import { HiMiniBars3 } from "react-icons/hi2";
 import "./index.css";
 import CourseNavigation from "./Navigation";
 import { IoIosArrowForward } from "react-icons/io";
+import Modules from "./Modules";
 
 function Courses() {
   const { courseId } = useParams();
@@ -23,7 +24,7 @@ function Courses() {
           <Routes>
             <Route path="/" element={<Navigate to="Home" />} />
             <Route path="Home" element={<h1>Home</h1>} />
-            <Route path="Modules" element={<h1>Modules</h1>} />
+            <Route path="Modules" element={<Modules />} />
             <Route path="Piazza" element={<h1>Piazza</h1>} />
             <Route path="Assignments" element={<h1>Assignments</h1>} />
             <Route
