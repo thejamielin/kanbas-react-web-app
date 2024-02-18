@@ -3,12 +3,14 @@ import "./index.css";
 import { modules } from "../../Database";
 import { FaEllipsisV, FaCheckCircle, FaPlusCircle } from "react-icons/fa";
 import { useParams } from "react-router";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 function ModuleList() {
   const { courseId } = useParams();
   const modulesList = modules.filter((module) => module.course === courseId);
   const [selectedModule, setSelectedModule] = useState(modulesList[0]);
   return (
-    <>
+    <div className="flex-fill">
       <button type="button">Collapse All</button>
       <button type="button">View Progress</button>
       <select id="select-one-publish-type">
@@ -48,7 +50,7 @@ function ModuleList() {
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 }
 export default ModuleList;

@@ -1,11 +1,12 @@
 import ModuleList from "../Modules/List";
+import "./index.css";
+import Status from "../Status";
 
 function Home() {
   return (
-    <div>
-      <h2>Home</h2>
+    <div className="wd-modules-status">
       <ModuleList />
-      <h2>Status</h2>
+      <Status />
     </div>
   );
 }
