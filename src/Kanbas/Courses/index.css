@@ -6,9 +6,18 @@
 .wd-course-header {
   color: var(--dull-red);
   font-size: 18px;
+  display: flex;
 }
 
 .wd-course-mini-bar {
   padding: 1px;
   margin-right: 12px;
+}
+
+.wd-course-arrow {
+  margin: 0px 9px;
+}
+
+.wd-course-breadcrumb {
+  color: var(--wd-text-gray);
 }

@@ -1,5 +1,11 @@
 import { courses } from "../../Kanbas/Database";
-import { Navigate, Route, Routes, useParams } from "react-router-dom";
+import {
+  Navigate,
+  Route,
+  Routes,
+  useParams,
+  useLocation,
+} from "react-router-dom";
 import { HiMiniBars3 } from "react-icons/hi2";
 import "./index.css";
 import CourseNavigation from "./Navigation";
@@ -11,11 +17,16 @@ import Assignments from "./Assignments";
 function Courses() {
   const { courseId } = useParams();
   const course = courses.find((course) => course._id === courseId);
+  const { pathname } = useLocation();
+  const path = pathname.split("/").pop();
   return (
     <div>
       <h1 className="wd-course-top wd-course-header">
         <HiMiniBars3 className="wd-course-mini-bar" /> Course {course?.name}{" "}
-        <IoIosArrowForward /> Home
+        <div className="wd-course-breadcrumb">
+          <IoIosArrowForward className="wd-course-arrow" />
+          {path}
+        </div>
       </h1>
       <CourseNavigation />
       <div>
