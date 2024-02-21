@@ -21,3 +21,8 @@
 .wd-course-breadcrumb {
   color: var(--wd-text-gray);
 }
+
+.wd-course-content {
+  display: flex;
+  flex-direction: row;
+}

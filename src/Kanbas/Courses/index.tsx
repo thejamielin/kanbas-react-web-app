@@ -28,12 +28,9 @@ function Courses() {
           {path}
         </div>
       </h1>
-      <CourseNavigation />
-      <div>
-        <div
-          className="overflow-y-scroll position-fixed bottom-0 end-0"
-          style={{ left: "320px", top: "50px", padding: "36px 48px 48px 48px" }}
-        >
+      <div className="wd-course-content">
+        <CourseNavigation />
+        <div className="flex-fill" style={{ padding: "36px 48px 48px 48px" }}>
           <Routes>
             <Route path="/" element={<Navigate to="Home" />} />
             <Route path="Home" element={<Home />} />
