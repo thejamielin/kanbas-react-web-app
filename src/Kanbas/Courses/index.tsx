@@ -5,6 +5,7 @@ import {
   Routes,
   useParams,
   useLocation,
+  Link,
 } from "react-router-dom";
 import { HiMiniBars3 } from "react-icons/hi2";
 import "./index.css";
@@ -23,6 +24,43 @@ function Courses() {
   const path = pathname.split("/").pop();
   return (
     <>
+      <div className="wd-display-md-show d-none">
+        <div className="d-flex wd-mobile-nav">
+          <div className="col-1 text-center">
+            <Link to="">
+              <button
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mobileKanbasNav"
+                aria-expanded="false"
+                aria-controls="collapseExample"
+              >
+                <FaBars />
+              </button>
+            </Link>
+          </div>
+          <div className="col-10 text-center wd-mobile-nav-title">
+            <a href="MobileCourseNav/">
+              <div>{course?.number}</div>
+              <div>Modules</div>
+            </a>
+          </div>
+          <div className="col-1 text-center">
+            <Link to="">
+              <button
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mobileCourseNavigation"
+                aria-expanded="false"
+                aria-controls="mobileCourseNavigation"
+              >
+                <FaAngleDown />
+              </button>
+            </Link>
+          </div>
+        </div>
+        <div className="collapse" id="mobileCourseNavigation"></div>
+      </div>
       <h1 className="wd-course-top wd-course-header">
         <HiMiniBars3 className="wd-course-mini-bar" /> Course {course?.name}{" "}
         <div className="wd-course-breadcrumb">
