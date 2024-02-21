@@ -9,7 +9,9 @@ function Home() {
       <div className="wd-home-modules flex-fill">
         <ModuleList />
       </div>
-      <Status />
+      <div className="d-none d-lg-block">
+        <Status />
+      </div>
     </div>
   );
 }

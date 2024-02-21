@@ -13,6 +13,8 @@ import { IoIosArrowForward } from "react-icons/io";
 import Modules from "./Modules";
 import Home from "./Home";
 import Assignments from "./Assignments";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { FaAngleDown, FaBars } from "react-icons/fa";
 
 function Courses() {
   const { courseId } = useParams();
@@ -29,7 +31,9 @@ function Courses() {
         </div>
       </h1>
       <div className="wd-course-content">
-        <CourseNavigation />
+        <div className=" d-none d-md-block">
+          <CourseNavigation />
+        </div>
         <div className="flex-fill">
           <Routes>
             <Route path="/" element={<Navigate to="Home" />} />
