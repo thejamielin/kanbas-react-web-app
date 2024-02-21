@@ -15,16 +15,16 @@ function Assignments() {
   );
   return (
     <>
-      <div className="wd-assignments-buttons">
+      <div className="wd-assignments-top">
         <form>
           <input type="text" placeholder="Search for Assignment" />
         </form>
-        <div>
+        <div className="wd-assignments-buttons">
           <button type="button">
             <FaPlus />
             Group
           </button>
-          <button type="button">
+          <button className="wd-white-on-red" type="button">
             <FaPlus />
             Assignment
           </button>

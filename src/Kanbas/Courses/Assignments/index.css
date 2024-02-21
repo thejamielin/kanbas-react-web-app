@@ -1,10 +1,24 @@
-.wd-assignments-buttons {
+.wd-assignments-top {
   padding-bottom: 12px;
   border-bottom: 1px solid var(--wd-border-gray);
   display: flex;
   justify-content: space-between;
 }
 
+.wd-assignments-buttons {
+  display: flex;
+  gap: 4px;
+}
+
+.wd-assignments-buttons button {
+  color: var(--wd-text-gray);
+}
+
 .wd-assignments {
   padding-top: 27px;
+}
+
+.wd-assignments-buttons .wd-white-on-red {
+  color: white;
+  background-color: var(--neu-red);
 }
