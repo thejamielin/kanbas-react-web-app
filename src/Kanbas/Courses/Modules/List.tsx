@@ -11,7 +11,7 @@ function ModuleList() {
   const [selectedModule, setSelectedModule] = useState(modulesList[0]);
   return (
     <div className="flex-fill">
-      <ul className="list-group">
+      <ul className="list-group wd-modules-list">
         {modulesList.map((module) => (
           <li
             className="list-group-item"

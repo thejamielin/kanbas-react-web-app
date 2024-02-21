@@ -1,3 +1,32 @@
 .wd-modules {
   padding: 36px 48px 48px 48px;
 }
+
+.wd-modules-list {
+  border-radius: 0%;
+}
+
+.wd-modules-list > li {
+  background-color: var(--module-gray);
+  border: 1px solid var(--wd-border-gray) !important;
+  padding: 0px;
+  margin-bottom: 20px;
+}
+
+.wd-modules-list > li > ul > li {
+  padding: 12px 6px 12px 10px;
+  border-top: 1px solid var(--wd-border-gray) !important;
+  border-left: 2px solid green;
+}
+
+.wd-modules-buttons {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--wd-border-gray);
+  display: flex;
+  gap: 4px;
+  justify-content: right;
+}
+
+.wd-modules-content {
+  padding-top: 27px;
+}
