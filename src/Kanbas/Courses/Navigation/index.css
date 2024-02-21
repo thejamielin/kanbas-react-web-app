@@ -1,10 +1,13 @@
-.wd-navigation {
+.wd-whole-navigation {
   background-color: white;
+  width: 125px;
+  padding-left: 24px;
+  padding-top: 24px;
+}
+
+.wd-navigation {
   list-style: none;
   padding: 0px;
-  width: 125px;
-  margin: 0px;
-  margin-left: 20px;
 }
 .wd-navigation li {
   padding: 8px 0px 8px 6px;

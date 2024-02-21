@@ -1,0 +1,10 @@
+.wd-assignments-buttons {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--wd-border-gray);
+  display: flex;
+  justify-content: space-between;
+}
+
+.wd-assignments {
+  padding-top: 27px;
+}

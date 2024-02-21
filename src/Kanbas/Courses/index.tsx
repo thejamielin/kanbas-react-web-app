@@ -20,7 +20,7 @@ function Courses() {
   const { pathname } = useLocation();
   const path = pathname.split("/").pop();
   return (
-    <div>
+    <>
       <h1 className="wd-course-top wd-course-header">
         <HiMiniBars3 className="wd-course-mini-bar" /> Course {course?.name}{" "}
         <div className="wd-course-breadcrumb">
@@ -32,7 +32,7 @@ function Courses() {
       <div>
         <div
           className="overflow-y-scroll position-fixed bottom-0 end-0"
-          style={{ left: "320px", top: "50px" }}
+          style={{ left: "320px", top: "50px", padding: "36px 48px 48px 48px" }}
         >
           <Routes>
             <Route path="/" element={<Navigate to="Home" />} />
@@ -48,7 +48,7 @@ function Courses() {
           </Routes>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 export default Courses;
