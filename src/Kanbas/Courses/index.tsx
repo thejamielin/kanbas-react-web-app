@@ -30,7 +30,7 @@ function Courses() {
       </h1>
       <div className="wd-course-content">
         <CourseNavigation />
-        <div className="flex-fill" style={{ padding: "36px 48px 48px 48px" }}>
+        <div className="flex-fill">
           <Routes>
             <Route path="/" element={<Navigate to="Home" />} />
             <Route path="Home" element={<Home />} />

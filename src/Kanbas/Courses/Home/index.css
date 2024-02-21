@@ -1,3 +1,7 @@
 .wd-modules-status {
   display: flex;
 }
+
+.wd-home-modules {
+  padding: 36px 48px 48px 48px;
+}

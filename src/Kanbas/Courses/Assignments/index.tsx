@@ -14,7 +14,7 @@ function Assignments() {
     (assignment) => assignment.course === courseId
   );
   return (
-    <>
+    <div className="wd-all-assignment-content">
       <div className="wd-assignments-top">
         <form>
           <input type="text" placeholder="Search for Assignment" />
@@ -63,7 +63,7 @@ function Assignments() {
           </li>
         </ul>
       </div>
-    </>
+    </div>
   );
 }
 export default Assignments;
