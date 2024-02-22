@@ -15,7 +15,14 @@ import {
 } from "react-icons/fa";
 function KanbasNavigation() {
   const links = [
-    { label: "N", icon: <FaNode className="fs-2" /> },
+    {
+      label: " ",
+      icon: (
+        <div className="container">
+          <img src="/images/N.png" width="100%" />
+        </div>
+      ),
+    },
     { label: "Account", icon: <FaRegUserCircle className="fs-2" /> },
     { label: "Dashboard", icon: <FaTachometerAlt className="fs-2" /> },
     { label: "Courses", icon: <FaBook className="fs-2" /> },
