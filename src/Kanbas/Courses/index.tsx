@@ -5,7 +5,6 @@ import {
   Routes,
   useParams,
   useLocation,
-  Link,
 } from "react-router-dom";
 import { HiMiniBars3 } from "react-icons/hi2";
 import "./index.css";
@@ -16,28 +15,30 @@ import Home from "./Home";
 import Assignments from "./Assignments";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FaAngleDown, FaBars } from "react-icons/fa";
+import { useState } from "react";
+import { Button, Collapse } from "react-bootstrap";
+import MobileCourseNav from "./MobileCourseNav";
+import MobileKanbasNav from "./MobileKanbasNav";
 
 function Courses() {
   const { courseId } = useParams();
   const course = courses.find((course) => course._id === courseId);
   const { pathname } = useLocation();
   const path = pathname.split("/").pop();
+  const [open, setOpen] = useState(false);
+  const [openKanbasNav, setOpenKanbasNav] = useState(false);
   return (
     <>
       <div className="wd-display-md-show d-none">
         <div className="d-flex wd-mobile-nav">
           <div className="col-1 text-center">
-            <Link to="">
-              <button
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#mobileKanbasNav"
-                aria-expanded="false"
-                aria-controls="collapseExample"
-              >
-                <FaBars />
-              </button>
-            </Link>
+            <Button
+              onClick={() => setOpenKanbasNav(!openKanbasNav)}
+              aria-controls="example-collapse-text"
+              aria-expanded={openKanbasNav}
+            >
+              <FaBars />
+            </Button>
           </div>
           <div className="col-10 text-center wd-mobile-nav-title">
             <a href="MobileCourseNav/">
@@ -46,20 +47,25 @@ function Courses() {
             </a>
           </div>
           <div className="col-1 text-center">
-            <Link to="">
-              <button
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#mobileCourseNavigation"
-                aria-expanded="false"
-                aria-controls="mobileCourseNavigation"
-              >
-                <FaAngleDown />
-              </button>
-            </Link>
+            <Button
+              onClick={() => setOpen(!open)}
+              aria-controls="wd-courses-mobile-nav"
+              aria-expanded={open}
+            >
+              <FaAngleDown />
+            </Button>
           </div>
         </div>
-        <div className="collapse" id="mobileCourseNavigation"></div>
+        <Collapse in={openKanbasNav} dimension="width">
+          <div id="wd-courses-mobile-nav">
+            <MobileKanbasNav />
+          </div>
+        </Collapse>
+        <Collapse in={open}>
+          <div id="wd-courses-mobile-nav">
+            <MobileCourseNav />
+          </div>
+        </Collapse>
       </div>
       <h1 className="wd-course-top wd-course-header">
         <HiMiniBars3 className="wd-course-mini-bar" /> Course {course?.name}{" "}

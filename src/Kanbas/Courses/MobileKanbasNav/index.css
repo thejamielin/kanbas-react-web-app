@@ -1,0 +1,38 @@
+a {
+  color: var(--dull-red);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* .wd-mobile-kanbas-nav-header {
+  align-items: center;
+  margin-bottom: 36px;
+}
+
+.wd-mobile-kanbas-nav {
+  position: fixed;
+  padding: 24px 36px 24px 24px;
+  width: 100%;
+  background-color: white;
+} */
+
+/* .wd-mobile-kanbas-nav ul {
+  list-style: none;
+  color: var(--dull-red);
+  height: 100%;
+  padding: 0px;
+  margin-bottom: 6px;
+  margin-left: 25px;
+}
+
+.wd-mobile-kanbas-nav li {
+  font-size: 20px;
+}
+
+.wd-mobile-kanbas-nav button {
+  border: none;
+  background-color: inherit;
+} */
