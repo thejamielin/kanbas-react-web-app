@@ -17,7 +17,7 @@ import Assignments from "./Assignments";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FaAngleDown, FaBars } from "react-icons/fa";
 
-function Courses() {
+function Courses({ courses }: { courses: any[] }) {
   const { courseId } = useParams();
   const course = courses.find((course) => course._id === courseId);
   const { pathname } = useLocation();
