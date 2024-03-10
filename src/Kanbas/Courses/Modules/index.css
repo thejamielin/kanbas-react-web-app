@@ -30,3 +30,53 @@
 .wd-modules-content {
   padding-top: 27px;
 }
+
+.wd-module-form-fields {
+  display: flex;
+  flex-direction: column;
+}
+
+.wd-module-form {
+  display: flex;
+  padding: 6px 12px;
+  background-color: white;
+  border-radius: 10px;
+  /* border: var(--wd-border-gray); */
+  justify-content: space-between;
+}
+
+.wd-white-on-green {
+  align-self: flex-start;
+  color: white;
+  background-color: green;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.wd-module-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.wd-module-editer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: inherit;
+  width: 100%;
+}
+
+.wd-white-on-red {
+  color: white;
+  background-color: var(--neu-red);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.wd-white-on-blue {
+  color: white;
+  background-color: var(--wd-update-blue);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
