@@ -9,11 +9,42 @@ function EncodingParametersInURLs() {
       <input type="number" value={a} onChange={(e) => setA(e.target.value)} />
       <input type="number" onChange={(e) => setB(e.target.value)} value={b} />
       <h3>Path Parameters</h3>
-      <a href={`http://localhost:4000/a5/add/${a}/${b}`}>
+      <a
+        className="btn btn-primary"
+        href={`http://localhost:4000/a5/add/${a}/${b}`}
+      >
         Add {a} + {b}
       </a>
-      <a href={`http://localhost:4000/a5/subtract/${a}/${b}`}>
+      <a
+        className="btn btn-danger"
+        href={`http://localhost:4000/a5/subtract/${a}/${b}`}
+      >
         Substract {a} - {b}
+      </a>
+      <h3>Query Parameters</h3>
+      <a
+        className="btn btn-primary"
+        href={`http://localhost:4000/a5/calculator?operation=add&a=${a}&b=${b}`}
+      >
+        Add {a} + {b}
+      </a>
+      <a
+        className="btn btn-danger"
+        href={`http://localhost:4000/a5/calculator?operation=subtract&a=${a}&b=${b}`}
+      >
+        Subtract {a} - {b}
+      </a>
+      <a
+        className="btn btn-success"
+        href={`http://localhost:4000/a5/calculator?operation=multiply&a=${a}&b=${b}`}
+      >
+        Multiply {a} * {b}
+      </a>
+      <a
+        className="btn btn-dark"
+        href={`http://localhost:4000/a5/calculator?operation=divide&a=${a}&b=${b}`}
+      >
+        Divide {a} / {b}
       </a>
     </div>
   );
