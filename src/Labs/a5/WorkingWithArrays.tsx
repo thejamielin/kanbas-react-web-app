@@ -63,6 +63,62 @@ function WorkingWithArrays() {
       <a className="btn btn-primary" href={`${API}/${todo.id}/delete`}>
         Delete Todo with ID = {todo.id}
       </a>
+      <h3>Updating an Item in an Array - On My OWn</h3>
+      <input
+        type="number"
+        value={todo.id}
+        onChange={(e) =>
+          setTodo({
+            ...todo,
+            id: Number(e.target.value),
+          })
+        }
+      />
+      <input
+        type="text"
+        value={todo.description}
+        onChange={(e) =>
+          setTodo({
+            ...todo,
+            description: e.target.value,
+          })
+        }
+      />
+      <h4>Updating an Property of an Item in an Array</h4>
+      <a
+        className="btn btn-primary"
+        href={`${API}/${todo.id}/description/${todo.description}`}
+      >
+        Update Description to {todo.description} for ID = {todo.id}
+      </a>
+      <h4>Updating an Boolean Property of an Item in an Array</h4>
+      <input
+        type="number"
+        value={todo.id}
+        onChange={(e) =>
+          setTodo({
+            ...todo,
+            id: Number(e.target.value),
+          })
+        }
+      />
+      <input
+        type="checkbox"
+        checked={todo.completed}
+        onChange={(e) =>
+          setTodo({
+            ...todo,
+            completed: e.target.checked,
+          })
+        }
+      />
+      <h4>Updating an Property of an Item in an Array</h4>
+      <a
+        className="btn btn-primary"
+        href={`${API}/${todo.id}/completed/${todo.completed}`}
+      >
+        Complete Todo ID = {todo.id}
+      </a>
     </div>
   );
 }
