@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 function WorkingWithObjects() {
   const [assignment, setAssignment] = useState({
     id: 1,
@@ -15,24 +16,39 @@ function WorkingWithObjects() {
     course: "Web Development",
   });
   const ASSIGNMENT_URL = "http://localhost:4000/a5/assignment";
+  const fetchAssignment = async () => {
+    const response = await axios.get(`${ASSIGNMENT_URL}`);
+    setAssignment(response.data);
+  };
+  const updateTitle = async () => {
+    const response = await axios.get(
+      `${ASSIGNMENT_URL}/title/${assignment.title}`
+    );
+    setAssignment(response.data);
+  };
+  useEffect(() => {
+    fetchAssignment();
+  }, []);
+
   const MODULE_URL = "http://localhost:4000/a5/module";
   return (
     <div>
       <h3>Working With Objects</h3>
-      <h4>Modifying Properties</h4>
+      <h3>Modifying Properties</h3>
       <input
-        type="text"
         onChange={(e) =>
-          setAssignment({ ...assignment, title: e.target.value })
+          setAssignment({
+            ...assignment,
+            title: e.target.value,
+          })
         }
         value={assignment.title}
+        type="text"
       />
-      <a
-        className="btn btn-primary"
-        href={`${ASSIGNMENT_URL}/title/${assignment.title}`}
-      >
-        Update Title
-      </a>
+      <button className="btn btn-primary" onClick={updateTitle}>
+        Update Title to: {assignment.title}
+      </button>
+      <button onClick={fetchAssignment}>Fetch Assignment</button>
       <h4>Retrieving Objects</h4>
       <a className="btn btn-primary" href="http://localhost:4000/a5/assignment">
         Get Assignment
