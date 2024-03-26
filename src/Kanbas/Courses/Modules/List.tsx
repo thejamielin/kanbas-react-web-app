@@ -1,15 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./index.css";
-import { modules as initialModules } from "../../Database";
 import { FaEllipsisV, FaCheckCircle } from "react-icons/fa";
 import { useParams } from "react-router";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useSelector, useDispatch } from "react-redux";
-import { addModule, deleteModule, updateModule, setModule } from "./reducer";
+import {
+  addModule,
+  deleteModule,
+  updateModule,
+  setModule,
+  setModules,
+} from "./reducer";
+import { findModulesForCourse, createModule } from "./client";
 import { KanbasState } from "../../store";
 
 function ModuleList() {
   const { courseId } = useParams();
+  useEffect(() => {
+    findModulesForCourse(courseId).then((modules) =>
+      dispatch(setModules(modules))
+    );
+  }, [courseId]);
+  const handleAddModule = () => {
+    createModule(courseId, module).then((module) => {
+      dispatch(addModule(module));
+    });
+  };
   const moduleList = useSelector((state: KanbasState) =>
     state.modulesReducer.modules.filter((module) => module.course === courseId)
   );
@@ -47,12 +63,7 @@ function ModuleList() {
                 Update
               </button>
 
-              <button
-                className="wd-white-on-green"
-                onClick={() =>
-                  dispatch(addModule({ ...module, course: courseId }))
-                }
-              >
+              <button className="wd-white-on-green" onClick={handleAddModule}>
                 Add
               </button>
             </div>
