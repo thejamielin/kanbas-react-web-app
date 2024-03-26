@@ -11,20 +11,29 @@ import {
   setModule,
   setModules,
 } from "./reducer";
-import { findModulesForCourse, createModule } from "./client";
+import * as client from "./client";
 import { KanbasState } from "../../store";
 
 function ModuleList() {
   const { courseId } = useParams();
   useEffect(() => {
-    findModulesForCourse(courseId).then((modules) =>
-      dispatch(setModules(modules))
-    );
+    client
+      .findModulesForCourse(courseId)
+      .then((modules) => dispatch(setModules(modules)));
   }, [courseId]);
   const handleAddModule = () => {
-    createModule(courseId, module).then((module) => {
+    client.createModule(courseId, module).then((module) => {
       dispatch(addModule(module));
     });
+  };
+  const handleDeleteModule = (moduleId: string) => {
+    client.deleteModule(moduleId).then((status) => {
+      dispatch(deleteModule(moduleId));
+    });
+  };
+  const handleUpdateModule = async () => {
+    const status = await client.updateModule(module);
+    dispatch(updateModule(module));
   };
   const moduleList = useSelector((state: KanbasState) =>
     state.modulesReducer.modules.filter((module) => module.course === courseId)
@@ -56,10 +65,7 @@ function ModuleList() {
               />
             </div>
             <div>
-              <button
-                className="wd-white-on-blue"
-                onClick={() => dispatch(updateModule(module))}
-              >
+              <button className="wd-white-on-blue" onClick={handleUpdateModule}>
                 Update
               </button>
 
@@ -78,7 +84,7 @@ function ModuleList() {
                 <div>
                   <button
                     className="wd-white-on-red"
-                    onClick={() => dispatch(deleteModule(m._id))}
+                    onClick={() => handleDeleteModule(m._id)}
                   >
                     Delete
                   </button>
