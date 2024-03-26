@@ -11,6 +11,10 @@ function WorkingWithArrays() {
   });
   const API = "http://localhost:4000/a5/todos";
   const [todos, setTodos] = useState<any[]>([]);
+  const postTodo = async () => {
+    const response = await axios.post(API, todo);
+    setTodos([...todos, response.data]);
+  };
   const fetchTodos = async () => {
     const response = await axios.get(API);
     setTodos(response.data);
@@ -70,6 +74,33 @@ function WorkingWithArrays() {
         Delete Todo with ID = {todo.id}
       </a>
       <h2>On My Own</h2>
+      <h4>Updating an Boolean Property of an Item in an Array</h4>
+      <input
+        type="number"
+        value={todo.id}
+        onChange={(e) =>
+          setTodo({
+            ...todo,
+            id: Number(e.target.value),
+          })
+        }
+      />
+      <input
+        type="checkbox"
+        checked={todo.completed}
+        onChange={(e) =>
+          setTodo({
+            ...todo,
+            completed: e.target.checked,
+          })
+        }
+      />
+      <a
+        className="btn btn-primary"
+        href={`${API}/${todo.id}/completed/${todo.completed}`}
+      >
+        Complete Todo ID = {todo.id}
+      </a>
       <h3>Updating an Item in an Array</h3>
       <input
         type="number"
@@ -98,27 +129,6 @@ function WorkingWithArrays() {
       >
         Update Description to {todo.description} for ID = {todo.id}
       </a>
-      <h4>Updating an Boolean Property of an Item in an Array</h4>
-      <input
-        type="number"
-        value={todo.id}
-        onChange={(e) =>
-          setTodo({
-            ...todo,
-            id: Number(e.target.value),
-          })
-        }
-      />
-      <input
-        type="checkbox"
-        checked={todo.completed}
-        onChange={(e) =>
-          setTodo({
-            ...todo,
-            completed: e.target.checked,
-          })
-        }
-      />
       <h4>Updating an Property of an Item in an Array</h4>
       <input
         type="number"
@@ -140,12 +150,38 @@ function WorkingWithArrays() {
           })
         }
       />
-      <a
-        className="btn btn-primary"
-        href={`${API}/${todo.id}/completed/${todo.completed}`}
-      >
-        Complete Todo ID = {todo.id}
-      </a>
+      <textarea
+        value={todo.description}
+        onChange={(e) => setTodo({ ...todo, description: e.target.value })}
+      />
+      <input
+        value={todo.due}
+        type="date"
+        onChange={(e) =>
+          setTodo({
+            ...todo,
+            due: e.target.value,
+          })
+        }
+      />
+      <label>
+        <input
+          checked={todo.completed}
+          type="checkbox"
+          onChange={(e) =>
+            setTodo({
+              ...todo,
+              completed: e.target.checked,
+            })
+          }
+        />
+        Completed
+      </label>
+      <button className="btn btn-warning" onClick={postTodo}>
+        {" "}
+        Post Todo{" "}
+      </button>
+
       <br />
       <button className="btn btn-primary" onClick={createTodo}>
         Create Todo
@@ -157,6 +193,10 @@ function WorkingWithArrays() {
       <ul>
         {todos.map((todo) => (
           <li key={todo.id}>
+            <input checked={todo.completed} type="checkbox" readOnly />
+            {todo.title}
+            <p>{todo.description}</p>
+            <p>{todo.due}</p>
             <button className="btn btn-danger" onClick={() => removeTodo(todo)}>
               Remove
             </button>
@@ -166,7 +206,6 @@ function WorkingWithArrays() {
             >
               Edit
             </button>
-            {todo.title}
           </li>
         ))}
       </ul>
