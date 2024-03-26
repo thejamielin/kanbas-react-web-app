@@ -38,6 +38,14 @@ function WorkingWithArrays() {
     const response = await axios.get(`${API}/${todo.id}/title/${todo.title}`);
     setTodos(response.data);
   };
+  const deleteTodo = async (todo: any) => {
+    const response = await axios.delete(`${API}/${todo.id}`);
+    setTodos(todos.filter((t) => t.id !== todo.id));
+  };
+  const updateTodo = async () => {
+    const response = await axios.put(`${API}/${todo.id}`, todo);
+    setTodos(todos.map((t) => (t.id === todo.id ? todo : t)));
+  };
 
   return (
     <div>
@@ -181,7 +189,7 @@ function WorkingWithArrays() {
         {" "}
         Post Todo{" "}
       </button>
-
+      <button onClick={updateTodo}>Update Todo</button>
       <br />
       <button className="btn btn-primary" onClick={createTodo}>
         Create Todo
@@ -197,6 +205,12 @@ function WorkingWithArrays() {
             {todo.title}
             <p>{todo.description}</p>
             <p>{todo.due}</p>
+            <button
+              onClick={() => deleteTodo(todo)}
+              className="btn btn-danger float-end ms-2"
+            >
+              Delete
+            </button>
             <button className="btn btn-danger" onClick={() => removeTodo(todo)}>
               Remove
             </button>
