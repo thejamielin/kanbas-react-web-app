@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 function WorkingWithArrays() {
   const [todo, setTodo] = useState({
@@ -9,29 +10,34 @@ function WorkingWithArrays() {
     completed: false,
   });
   const API = "http://localhost:4000/a5/todos";
+  const [todos, setTodos] = useState<any[]>([]);
+  const fetchTodos = async () => {
+    const response = await axios.get(API);
+    setTodos(response.data);
+  };
+  useEffect(() => {
+    fetchTodos();
+  }, []);
+  const removeTodo = async (todo: any) => {
+    const response = await axios.get(`${API}/${todo.id}/delete`);
+    setTodos(response.data);
+  };
+  const createTodo = async () => {
+    const response = await axios.get(`${API}/create`);
+    setTodos(response.data);
+  };
+  const fetchTodoById = async (id: any) => {
+    const response = await axios.get(`${API}/${id}`);
+    setTodo(response.data);
+  };
+  const updateTitle = async () => {
+    const response = await axios.get(`${API}/${todo.id}/title/${todo.title}`);
+    setTodos(response.data);
+  };
+
   return (
     <div>
       <h3>Working with Arrays</h3>
-      <input
-        type="number"
-        value={todo.id}
-        onChange={(e) =>
-          setTodo({
-            ...todo,
-            id: Number(e.target.value),
-          })
-        }
-      />
-      <input
-        type="text"
-        value={todo.title}
-        onChange={(e) =>
-          setTodo({
-            ...todo,
-            title: e.target.value,
-          })
-        }
-      />
       <h3>Updating an Item in an Array</h3>
       <a
         className="btn btn-primary"
@@ -63,7 +69,8 @@ function WorkingWithArrays() {
       <a className="btn btn-primary" href={`${API}/${todo.id}/delete`}>
         Delete Todo with ID = {todo.id}
       </a>
-      <h3>Updating an Item in an Array - On My OWn</h3>
+      <h2>On My Own</h2>
+      <h3>Updating an Item in an Array</h3>
       <input
         type="number"
         value={todo.id}
@@ -113,12 +120,56 @@ function WorkingWithArrays() {
         }
       />
       <h4>Updating an Property of an Item in an Array</h4>
+      <input
+        type="number"
+        value={todo.id}
+        onChange={(e) =>
+          setTodo({
+            ...todo,
+            id: Number(e.target.value),
+          })
+        }
+      />
+      <input
+        type="text"
+        value={todo.title}
+        onChange={(e) =>
+          setTodo({
+            ...todo,
+            title: e.target.value,
+          })
+        }
+      />
       <a
         className="btn btn-primary"
         href={`${API}/${todo.id}/completed/${todo.completed}`}
       >
         Complete Todo ID = {todo.id}
       </a>
+      <br />
+      <button className="btn btn-primary" onClick={createTodo}>
+        Create Todo
+      </button>
+      <button className="btn btn-success" onClick={updateTitle}>
+        Update Title
+      </button>
+
+      <ul>
+        {todos.map((todo) => (
+          <li key={todo.id}>
+            <button className="btn btn-danger" onClick={() => removeTodo(todo)}>
+              Remove
+            </button>
+            <button
+              className="btn btn-warning"
+              onClick={() => fetchTodoById(todo.id)}
+            >
+              Edit
+            </button>
+            {todo.title}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
