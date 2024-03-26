@@ -27,20 +27,26 @@ function EncodingParametersInURLs() {
   return (
     <div>
       <h3>Encoding Parameters In URLs</h3>
-      <h4>Integrating React with APIs</h4>
-      <h5>Fetching Welcome</h5>
-      <h6>{welcome}</h6>
       <h4>Calculator</h4>
       <input type="number" value={a} onChange={(e) => setA(e.target.value)} />
       <input type="number" onChange={(e) => setB(e.target.value)} value={b} />
       <input value={result} type="number" readOnly />
       <h3>Fetch Result</h3>
-      <button onClick={() => fetchSum(Number(a), Number(b))}>
+      <button
+        className="btn btn-primary"
+        onClick={() => fetchSum(Number(a), Number(b))}
+      >
         Fetch Sum of {a} + {b}
       </button>
-      <button onClick={() => fetchSubtraction(Number(a), Number(b))}>
+      <button
+        className="btn btn-danger"
+        onClick={() => fetchSubtraction(Number(a), Number(b))}
+      >
         Fetch Substraction of {a} - {b}
       </button>
+      <h4>Integrating React with APIs</h4>
+      <h5>Fetching Welcome</h5>
+      <h6>{welcome}</h6>
       <h3>Path Parameters</h3>
       <a
         className="btn btn-primary"
